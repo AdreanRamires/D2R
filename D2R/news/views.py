@@ -10,7 +10,7 @@ def latest_news(request):
         'news': news,
     }
 
-    return render(request, 'news.html', context=context)
+    return render(request, 'news/news.html', context=context)
 
 
 def read_more(request, pk):
@@ -20,4 +20,4 @@ def read_more(request, pk):
         'new': new,
     }
 
-    return render(request, 'read-more.html', context=context)
+    return render(request, 'news/read-more.html', context=context)

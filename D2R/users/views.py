@@ -17,14 +17,14 @@ def login_user(request):
                 'form': form,
             }
 
-            return render(request, 'login.html', context=context)
+            return render(request, 'users/login.html', context=context)
     else:
         form = LoginForm()
         context = {
             'form': form,
         }
 
-        return render(request, 'login.html', context=context)
+        return render(request, 'users/login.html', context=context)
 
 
 def register_user(request):
@@ -40,7 +40,7 @@ def register_user(request):
                 'form': form,
             }
 
-            return render(request, 'register.html', context=context)
+            return render(request, 'users/register.html', context=context)
     else:
         form = RegisterForm()
         
@@ -48,7 +48,7 @@ def register_user(request):
             'form': form,
         }
 
-        return render(request, 'register.html', context=context)
+        return render(request, 'users/register.html', context=context)
 
 
 @login_required()
@@ -74,4 +74,4 @@ def profile_user(request):
         'profile': profile,
     }
 
-    return render(request, 'user-profile.html', context=context)
+    return render(request, 'users/user-profile.html', context=context)
