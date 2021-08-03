@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block  content %}
+    <h2>Upload Image</h2>
+    <form class="register" enctype="multipart/form-data" method="post" action="{% url 'image upload' %}">
+        {% csrf_token %}
+        {% for field in form.visible_fields %}
+            {{ field.label_tag }}
+              {{ field.errors }}
+              {{ field }}
+              {{ field.help_text }}
+        {% endfor %}
+        <li class="error">
+            {{ form.non_field_errors }}
+        </li>
+        <button class="button">Upload</button>
+    </form>
+{% endblock %}

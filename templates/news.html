@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <article class="news-wrapper">
+
+            {% for new in news %}
+
+                <article class="news-card">
+                <article class="new-image-wrapper">
+                    <img src="{{ new.image.url }}" alt="" class="new-image">
+                </article>
+
+                <article class="new-info-wrapper">
+                    <h3 class="new-title">
+                       {{ new.title }}
+                    </h3>
+                    <article class="new-posted-read-wrapper">
+                        <p class="posted-by">
+                            Posted on : {{ new.posted_on.date }}
+                        </p>
+
+                        <a href="{% url 'news detail' new.id %}" class="new-read-more button">read more</a>
+                    </article>
+                </article>
+            </article>
+
+            {% endfor %}
+
+    </article>
+{% endblock %}

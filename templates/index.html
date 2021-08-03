@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+        <section class="banner">
+            <article class="banner-wrapper">
+                <img src="{% static 'images/banner.jpg' %}" alt="" class="banner">
+
+                <article class="banner-bottom">
+                    <p class="banner-bottom-text">
+                        Diablo II: Resurrected includes all content from both Diablo II and its epic expansion Diablo
+                        II: Lord of Destruction®. Battle your way through icy caverns, horrific tombs filled with undead
+                        abominations, and frozen wastelands to the frigid summit of Mount Arreat and stop Baal, the Lord
+                        of Destruction. Raise hell with all seven playable classes from Diablo II and Lord of
+                        Destruction, including the cunning Assassin, master of traps and shadow disciplines, and the
+                        savage Druid, a bold shapeshifter and summoner who commands primal elemental magic.
+                    </p>
+                </article>
+            </article>
+        </section>
+
+        <section class="latest">
+            <article class="latest-card">
+                <article class="latest-card-icon-wrapper">
+                    <i class="far fa-newspaper"></i>
+                </article>
+                <h4 class="latest-card-header">
+                    LATEST NEWS
+                </h4>
+
+                <p class="latest-card-text">
+                    In posuere eleifend odio. Quisque semper augue mattis wisi. Pellentesque viverra vulputate enim.
+                    Aliquam erat volutpat.
+                </p>
+            </article>
+
+{#            <article class="latest-card">#}
+{#                <article class="latest-card-icon-wrapper">#}
+{#                    <i class="fas fa-chess-pawn"></i>#}
+{#                </article>#}
+{#                <h4 class="latest-card-header">#}
+{#                    STRATEGIES#}
+{#                </h4>#}
+{##}
+{#                <p class="latest-card-text">#}
+{#                    In posuere eleifend odio. Quisque semper augue mattis wisi. Pellentesque viverra vulputate enim.#}
+{#                    Aliquam erat volutpat.#}
+{#                </p>#}
+{#            </article>#}
+
+            <article class="latest-card">
+                <article class="latest-card-icon-wrapper">
+                    <i class="fas fa-photo-video"></i>
+                </article>
+                <h4 class="latest-card-header">
+                    GALLERY
+                </h4>
+
+                <p class="latest-card-text">
+                    In posuere eleifend odio. Quisque semper augue mattis wisi. Pellentesque viverra vulputate enim.
+                    Aliquam erat volutpat.
+                </p>
+            </article>
+
+        </section>
+
+        <section class="request">
+            <h1 class="request-title">
+                BECOME PART OF THE TEAM
+            </h1>
+            <p class="request-post-title-text">
+                WOULD YOU LIKE TO BECOME AN A++ MEMBER, MODERATOR OR AN ADMIN?
+            </p>
+            <p class="request-post-title-text">
+                CLICK THE LINK BELOW AND FOLLOW THE READ.
+            </p>
+
+            <article class="request-btn-wrapper">
+                <button class="request-btn">Apply Now</button>
+            </article>
+        </section>
+{% endblock %}

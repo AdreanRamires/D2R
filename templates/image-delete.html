@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form class="register" method="post" action="{% url 'image delete' image.id %}" style="margin-top: 3%">
+        {% csrf_token %}
+        <h2 class="confirm-delete-head-title">Confirm Delete</h2>
+        <p class="confirm-deletion-text">
+            <b>Are you sure you want to delete <u>{{ image.title }}</u>?</b>
+        </p>
+        
+        <img src="{{ image.image.url }}" alt="" class="deletion-image">
+
+        <article class="confirm-btn-wrapper">
+            <input class="button" style="width: 170px" type="submit" value="Yes">
+
+            <a class="button" href="{% url 'image details' image.id %}">
+                No
+            </a>
+        </article>
+    </form>
+
+{% endblock %}

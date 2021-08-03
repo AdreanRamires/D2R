@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Image Edit</h2>
+    <form class="register" enctype="multipart/form-data" method="post" action="{% url 'image edit' image.id %}">
+        {% csrf_token %}
+        {{ form }}
+        <button class="button">Edit</button>
+    </form>
+{% endblock %}

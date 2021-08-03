@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <article class="profile-wrapper">
+        <h1>Hello, {{ request.user }}!</h1>
+         <form class="profile-update" method="post" action="{% url 'profile user' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <article class="profile-wrapper">
+            {% if profile.profile_image %}
+                <article class="profile-image-wrapper">
+                    <img src="{{ profile.profile_image.url }}" alt="" class="profile-image">
+                </article>
+            {% else %}
+                <article class="profile-image-wrapper">
+                    <img src="{% static 'images/login-avatar.png' %}" alt="" class="profile-image">
+                </article>
+            {% endif %}
+        </article>
+        {{ form.as_p }}
+
+        <button class="button">Update</button>
+        </form>
+    </article>
+
+{% endblock %}

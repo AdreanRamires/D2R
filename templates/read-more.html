@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <artilce class="read-more-wrapper">
+
+            <h2 class="read-more-title">
+                {{ new.title }}
+            </h2>
+
+            <p class="read-more-post-title">
+                {{ new.post_title }}
+            </p>
+
+            <article class="read-more-img-wrapper">
+                <img src="{{ new.image.url }}" alt="" class="read-more-image">
+            </article>
+
+            <p class="posted-on">
+                <u>Posted on</u> : {{ new.posted_on }}
+            </p>
+            <p class="read-more-content">
+                {{ new.about }}
+            </p>
+
+    </artilce>
+
+{% endblock %}

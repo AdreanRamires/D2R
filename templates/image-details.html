@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <article class="main-content-wrapper">
+
+            <section class="image-user-info-wrapper">
+
+                <article class="user-image-wrapper">
+                    <img src="{{ image.image.url }}" alt="" class="content-image">
+                </article>
+
+
+                <article class="details-btn-wrapper">
+
+                    <article class="user-wrapper">
+                        <p class="user-name">
+                            <b><u>Uploaded by:</u></b> {{ image.user }}
+                        </p>
+
+                        <p class="image-name">
+                            <b><u>Image title:</u></b> {{ image.title }}
+                        </p>
+                    </article>
+
+                    {% if creator or super_user %}
+                        <article class="btn-wrapper">
+
+                            <a href="{% url 'image edit' image.id %}">
+                                <button class="edit">
+                                    Edit
+                                </button>
+                            </a>
+
+
+                            <a href="{% url 'image delete' image.id %}">
+                                <button class="delete">
+                                    Delete
+                                </button>
+                            </a>
+
+                        </article>
+                    {% endif %}
+
+                </article>
+
+            </section>
+
+            <section class="image-details">
+                <article class="image-description-wrapper">
+                    <p class="description-title"><u>Description:</u></p>
+                    <p class="description-content">
+                        {{ image.description }}
+                    </p>
+                </article>
+            </section>
+    </article>
+
+{% endblock %}

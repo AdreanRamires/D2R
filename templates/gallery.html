@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+    <article class="gallery-main-wrapper">
+    <h2>Gallery</h2>
+        <article class="gallery-wrapper">
+        {% if images %}
+                {% for image in images %}
+                    <article class="photo-card">
+                        <article class="img-wrapper">
+                            <a href="{% url 'image details' image.id %}">
+                                <img src="{{ image.image.url }}" alt="">
+                            </a>
+                        </article>
+                    </article>
+                {% endfor %}
+            {% else %}
+                <h1 class="no-content">
+                    No images in gallery.
+                </h1>
+            {% endif %}
+        </article>
+         <a class="a-btn" href="{% url 'image upload' %}">
+                <button class="button">Upload image</button>
+         </a>
+
+    </article>
+
+    {% endblock %}

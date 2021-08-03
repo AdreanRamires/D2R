@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <title>DII R ZONE</title>
+</head>
+
+<body>
+    <header>
+        <article class="logo-wrapper">
+            <h1 class="logo">
+                <a href="{% url 'home' %}">DII R ZONE</a>
+            </h1>
+
+            <p class="logo-by">
+                BY AMR
+            </p>
+        </article>
+
+        <nav class="nav">
+            <ul class="nav-ul">
+
+                <li class="nav-li">
+                    <a href="{% url 'news' %}" class="nav-a">
+                        News
+                    </a>
+                </li>
+
+                <li class="nav-li">
+                    <a href="{% url 'gallery' %}" class="nav-a">
+                        Gallery
+                    </a>
+                </li>
+
+                {% if not request.user.is_authenticated %}
+                    <li class="nav-li">
+                        <a href="{% url 'login user' %}" class="nav-a">
+                            Log in
+                        </a>
+                    </li>
+
+                    <li class="nav-li">
+                        <a href="{% url 'register user' %}" class="nav-a">
+                            Register
+                        </a>
+                    </li>
+                {% elif request.user.is_authenticated %}
+
+                    <li class="nav-li">
+                        <a href="{% url 'profile user' %}" class="nav-a">
+                            Profile
+                        </a>
+                    </li>
+
+                    <li class="nav-li">
+                        <a href="{% url 'logout user' %}" class="nav-a">
+                            Logout
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+     <footer class="footer">
+        <section class="footer-top">
+            <p class="find-us">
+                Get connected with us on social media
+            </p>
+        </section>
+        <section class="footer-bottom">
+            <article class="logo-wrapper">
+                DII R ZONE
+            </article>
+            <article class="contact-logo-wrapper">
+
+                <a href="">
+                <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-github"></i>
+                </a>
+            </article>
+        </section>
+    </footer>
+</body>
