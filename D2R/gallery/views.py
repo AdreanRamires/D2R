@@ -11,7 +11,7 @@ def gallery(request):
         'images': images,
     }
 
-    return render(request, 'gallery.html', context=context)
+    return render(request, 'gallery/gallery.html', context=context)
 
 
 @login_required
@@ -31,7 +31,7 @@ def image_upload(request):
             'form': form,
         }
 
-        return render(request, 'image-upload.html', context=context)
+        return render(request, 'gallery/image-upload.html', context=context)
 
 
 def image_details(request, pk):
@@ -44,7 +44,7 @@ def image_details(request, pk):
         'super_user': super_user,
     }
 
-    return render(request, 'image-details.html', context=context)
+    return render(request, 'gallery/image-details.html', context=context)
 
 
 def image_edit(request, pk):
@@ -63,7 +63,7 @@ def image_edit(request, pk):
         'image': image,
         }
 
-    return render(request, 'image-edit.html', context=context)
+    return render(request, 'gallery/image-edit.html', context=context)
 
 
 def image_delete(request, pk):
@@ -79,4 +79,4 @@ def image_delete(request, pk):
             'image': image,
         }
 
-        return render(request, 'image-delete.html', context=context)
+        return render(request, 'gallery/image-delete.html', context=context)
