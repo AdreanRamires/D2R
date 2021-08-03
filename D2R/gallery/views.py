@@ -80,27 +80,3 @@ def image_delete(request, pk):
         }
 
         return render(request, 'image-delete.html', context=context)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

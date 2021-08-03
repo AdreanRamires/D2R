@@ -20,4 +20,3 @@ class ImageEditForm(forms.ModelForm):
                    'description': forms.Textarea(attrs={'class': 'input',
                                                         'style': 'height:250px'}),
                    }
-
