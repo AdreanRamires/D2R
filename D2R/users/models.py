@@ -18,7 +18,6 @@ class DrUser(AbstractBaseUser, PermissionsMixin):
 
 
 class Profile(models.Model):
-
     profile_image = models.ImageField(
         upload_to='profiles',
         blank=True,

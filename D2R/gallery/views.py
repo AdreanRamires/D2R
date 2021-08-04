@@ -1,14 +1,12 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-
 from .forms import ImageForm, ImageEditForm
 from .models import ImageModel
 
 
 def gallery(request):
-    images = ImageModel.objects.all()
     context = {
-        'images': images,
+        'images': ImageModel.objects.all(),
     }
 
     return render(request, 'gallery/gallery.html', context=context)
@@ -34,6 +32,7 @@ def image_upload(request):
         return render(request, 'gallery/image-upload.html', context=context)
 
 
+@login_required()
 def image_details(request, pk):
     image = ImageModel.objects.get(pk=pk)
     creator = request.user.id == image.user.id
@@ -47,6 +46,7 @@ def image_details(request, pk):
     return render(request, 'gallery/image-details.html', context=context)
 
 
+@login_required()
 def image_edit(request, pk):
     image = ImageModel.objects.get(pk=pk)
     if request.method == 'POST':
@@ -66,6 +66,7 @@ def image_edit(request, pk):
     return render(request, 'gallery/image-edit.html', context=context)
 
 
+@login_required()
 def image_delete(request, pk):
     image = ImageModel.objects.get(pk=pk)
     if request.method == 'POST':
