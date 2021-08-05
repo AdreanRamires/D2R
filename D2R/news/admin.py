@@ -4,4 +4,4 @@ from D2R.news.models import NewsModel
 
 @admin.register(NewsModel)
 class NewsAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('title',)

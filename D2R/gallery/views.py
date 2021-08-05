@@ -32,7 +32,6 @@ def image_upload(request):
         return render(request, 'gallery/image-upload.html', context=context)
 
 
-@login_required()
 def image_details(request, pk):
     image = ImageModel.objects.get(pk=pk)
     creator = request.user.id == image.user.id
