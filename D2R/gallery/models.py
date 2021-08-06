@@ -1,6 +1,5 @@
 from django.contrib.auth import get_user_model
 from django.db import models
-from D2R.users.models import DrUser
 UserModel = get_user_model()
 
 
