@@ -19,7 +19,7 @@ class TestViews(TestCase):
         self.image = SimpleUploadedFile(
             name='login-avatar.jpg',
             content=open('D:/D2R/static/images/login-avatar.png', 'rb').read(),
-            content_type='image/jpeg')
+            content_type='image/png')
         self.image_obj = ImageModel.objects.create(
             title='test',
             description='test',
@@ -38,7 +38,6 @@ class TestViews(TestCase):
     def test_image_upload_GET(self):
         response = self.client.get(reverse('image upload'))
         self.assertEqual(response.status_code, 200)
-        print(response.context['form'])
 
     def test_image_details_GET(self):
         response = self.client.get(reverse('image details', kwargs={'pk': self.image_obj.id}),
@@ -77,7 +76,7 @@ class TestViews(TestCase):
         response = self.client.post(reverse('image upload'),
                                     data={'title': 'edited title',
                                           'description': 'edited description',
-                                          'image': 'path/to/image.png'})
+                                          'image': self.image}, follow=True)
         # Can't validate form
         # {'form': <ImageForm bound=True, !!! valid=False !!!, fields=(title;description;image)>}
         # self.assertRedirects(response, '/gallery/', status_code=302)
