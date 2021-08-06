@@ -1,6 +1,7 @@
+from django.contrib.auth import get_user_model
 from django.db import models
-
 from D2R.users.models import DrUser
+UserModel = get_user_model()
 
 
 class ImageModel(models.Model):
@@ -17,7 +18,6 @@ class ImageModel(models.Model):
     image = models.ImageField(
         upload_to='media/gallery',
         blank=False,
-
     )
 
-    user = models.ForeignKey(DrUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserModel, on_delete=models.CASCADE)

@@ -25,11 +25,11 @@ def image_upload(request):
     else:
         form = ImageForm()
 
-        context = {
-            'form': form,
-        }
+    context = {
+        'form': form,
+    }
 
-        return render(request, 'gallery/image-upload.html', context=context)
+    return render(request, 'gallery/image-upload.html', context=context)
 
 
 def image_details(request, pk):
