@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 
 def index(request):
+    return render(request, 'home/index.html')
 
-    context = {
 
-    }
-    return render(request, 'home/index.html', context=context)
+def error_404_view(request, exception):
+    return render(request, '404.html')

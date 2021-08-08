@@ -25,3 +25,5 @@ urlpatterns = [
     path('gallery/', include('D2R.gallery.urls')),
     path('news/', include('D2R.news.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'D2R.lld.views.error_404_view'

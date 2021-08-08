@@ -110,6 +110,7 @@ main {
 .banner-bottom-text {
     padding: 30px 100px 30px 100px;
     text-align: center;
+    line-height: 1.5;
     color: white;
 }
 
@@ -119,7 +120,7 @@ main {
 
 .latest {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: #010101;
     color: white;
 }
@@ -130,6 +131,7 @@ main {
     justify-items: center;
     padding: 30px;
     padding-top: 60px;
+    max-width: 30%;
 }
 
 .latest-card-icon-wrapper {
@@ -157,7 +159,7 @@ main {
     text-align: center;
     color: #63696E;
     line-height: 1.5;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
 }
 
 .request {
@@ -282,6 +284,7 @@ main {
     border-radius: 10px;
 }
 
+
 .button:hover {
     background-color: #8C0909;
     color: #F8CFA6;
@@ -378,10 +381,11 @@ label {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin: 20px;
 }
 
 .user-wrapper {
-    margin: 25px;
+
 }
 
 .user-name, .image-name {
@@ -389,7 +393,7 @@ label {
 }
 
 .btn-wrapper {
-    margin: 30px;
+    display: flex;
 }
 
 .edit, .delete {
@@ -542,6 +546,7 @@ label {
     flex-direction: column;
     width: 900px;
     align-self: center;
+    margin-bottom: 20px;
 }
 
 .read-more-post-title {
