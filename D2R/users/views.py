@@ -12,43 +12,32 @@ def login_user(request):
             user = form.user_cache
             login(request, user)
             return redirect('home')
-        else:
-            context = {
-                'form': form,
-            }
-
-            return render(request, 'users/login.html', context=context)
     else:
         form = LoginForm()
-        context = {
-            'form': form,
-        }
 
-        return render(request, 'users/login.html', context=context)
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'users/login.html', context=context)
 
 
 def register_user(request):
     if request.method == 'POST':
-        form = RegisterForm(request.POST)
+        form = RegisterForm(data=request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
             return redirect('home')
 
-        else:
-            context = {
-                'form': form,
-            }
-
-            return render(request, 'users/register.html', context=context)
     else:
         form = RegisterForm()
         
-        context = {
-            'form': form,
-        }
+    context = {
+        'form': form,
+    }
 
-        return render(request, 'users/register.html', context=context)
+    return render(request, 'users/register.html', context=context)
 
 
 @login_required()

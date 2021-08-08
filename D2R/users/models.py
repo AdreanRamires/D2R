@@ -1,5 +1,6 @@
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
+from django.core.validators import validate_image_file_extension, FileExtensionValidator
 from django.db import models
 from D2R.users.managers import DrUserManager
 
@@ -19,7 +20,7 @@ class DrUser(AbstractBaseUser, PermissionsMixin):
 
 class Profile(models.Model):
     profile_image = models.ImageField(
-        upload_to='profiles',
+        upload_to='media/profiles',
         blank=True,
     )
 
@@ -28,6 +29,5 @@ class Profile(models.Model):
         on_delete=models.CASCADE,
         primary_key=True,
     )
-
 
 from .signals import *

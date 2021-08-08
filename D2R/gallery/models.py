@@ -15,7 +15,7 @@ class ImageModel(models.Model):
     )
 
     image = models.ImageField(
-        upload_to='media/gallery',
+        upload_to='media/profiles',
         blank=False,
     )
 
