@@ -24,6 +24,7 @@ ___
 * Login & Register functionality
   * profile page available for registered users
 
+* Responsive design for easy client access
 ___
 ### Future Long-term Goals features to be implemented
 
