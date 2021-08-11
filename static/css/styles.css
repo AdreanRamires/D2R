@@ -22,6 +22,12 @@ header {
     align-items: center;
 }
 
+nav {
+    display: flex;
+
+}
+
+
 .nav-ul {
     display: flex;
 }
@@ -72,7 +78,7 @@ header {
     text-decoration: none;
 }
 
-/*LOGO link*/
+
 a {
     text-decoration: none;
     color: black;
@@ -92,12 +98,13 @@ main {
 }
 
 .banner-wrapper {
-    height: 850px;
+    max-height: 800px;
 }
 
 .banner {
     position: relative;
     width: 100%;
+    height: 100%;
 }
 
 .banner-bottom {
@@ -108,10 +115,11 @@ main {
 }
 
 .banner-bottom-text {
-    padding: 30px 100px 30px 100px;
+    padding: 30px 30px 30px 30px;
     text-align: center;
     line-height: 1.5;
     color: white;
+    margin: 0px;
 }
 
 .banner-bottom-text > a {
@@ -358,17 +366,17 @@ label {
 .image-user-info-wrapper {
     display: flex;
     flex-direction: column;
-    width: 700px;
+    max-width: 700px;
     max-height: 600px;
     align-items: center;
     margin: 35px 0px 35px 35px;
 }
 
 .user-image-wrapper {
-    height: 400px;
-    width: 600px;
-    align-items: center;
     display: flex;
+    max-width: 600px;
+    max-height: 450px;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
     border: 2px solid black;
@@ -486,21 +494,22 @@ label {
 .news-wrapper {
     display: flex;
     flex-wrap: wrap;
-    width: 1200px;
+    max-width: 100%;
     justify-content: center;
 }
 
 .news-card {
-    width: 500px;
-    height: 400px;
+    max-width: 500px;
+    max-height: 400px;
     margin: 40px;
     box-shadow: 0px 0px 7px 0px #000000;
 }
 
 .new-image-wrapper {
-    height: 70%;
     width: 100%;
+    height: 70%;
 }
+
 .new-image {
     display: flex;
     height: 100%;
@@ -509,7 +518,6 @@ label {
 
 .new-info-wrapper {
     padding: 10px;
-    height: 70%;
 }
 
 .new-title {
@@ -544,7 +552,7 @@ label {
 .read-more-wrapper {
     display: flex;
     flex-direction: column;
-    width: 900px;
+    max-width: 900px;
     align-self: center;
     margin-bottom: 20px;
 }
@@ -554,7 +562,7 @@ label {
 }
 
 .read-more-img-wrapper {
-    width: 600px;
+    max-width: 600px;
     max-height: 350px;
 
 }
@@ -565,10 +573,228 @@ label {
 }
 
 .read-more-content {
+    display: flex;
     width: 80%;
     line-height: 1.3;
 }
 
 .posted-on {
     margin-bottom: 5px;
+}
+
+.other-lk {
+    color: white;
+}
+
+@media all and (max-width: 760px) {
+    header {
+        flex-direction: column;
+    }
+
+    .nav-ul {
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .request-title {
+        font-size: 20px;
+    }
+
+    .request-post-title-text {
+        font-size: 13px;
+        font-weight: bold;
+        padding: 0px 15px;
+        line-height: 1.8;
+    }
+
+    .request-btn {
+        padding: 10px 30px;
+        letter-spacing: 2px;
+    }
+
+    .contact-logo-wrapper a i {
+        font-size: 20px;
+        padding: 0px;
+    }
+
+    .logo-wrapper {
+        font-size: 16px;
+    }
+
+    .find-us {
+        font-size: 12px;
+    }
+
+    .far, .fas {
+        font-size: 40px;
+    }
+
+    .latest-card-icon-wrapper {
+        width: 80px;
+        height: 80px;
+    }
+
+    .latest-card-header {
+        font-size: 13px;
+    }
+
+    .news-card {
+    max-width: 500px;
+    max-height: 400px;
+    margin: 20px;
+    box-shadow: 0px 0px 7px 0px #000000;
+    }
+
+    .new-title {
+        font-size: 15px;
+    }
+
+    .posted-by {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    .new-posted-read-wrapper a {
+        font-size: 12px;
+        margin-bottom: 15px;
+        padding: 5px;
+    }
+
+    .new-info-wrapper {
+        padding: 0px 5px;
+    }
+
+    .read-more-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .read-more-title, .read-more-post-title {
+        text-align: center;
+    }
+
+    .read-more-content {
+        text-align: justify;
+    }
+    .main-content-wrapper {
+        flex-direction: column;
+    }
+
+
+   .image-user-info-wrapper {
+        display: flex;
+        flex-direction: column;
+        max-width: 700px;
+        align-items: center;
+        margin: 35px 0px 35px 35px;
+        order: 1;
+   }
+
+   .image-details {
+        order: 0;
+   }
+
+   .main-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    }
+
+   .image-user-info-wrapper {
+        display: flex;
+        flex-direction: column;
+        max-width: 700px;
+        align-items: center;
+        margin: 0px;
+        order: 1;
+    }
+
+   .details-btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    }
+
+   .deletion-image {
+        max-width: 300px;
+        max-height: 300px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 2px solid black;
+        padding: 20px;
+        box-shadow: 0px 0px 7px 0px #000000;
+   }
+
+   .confirm-btn-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        flex-direction: column;
+    }
+
+}
+
+@media all and (max-width: 1290px) {
+
+    header {
+        flex-direction: column;
+    }
+
+    .nav-ul {
+        display: flex;
+        padding: 0px;
+    }
+
+    .banner-bottom-text {
+        display: none;
+    }
+
+    .banner {
+        vertical-align: bottom;
+    }
+
+    .latest-card-text {
+        display: none;
+    }
+
+    .news-card {
+        max-width: 500px;
+        max-height: 400px;
+        margin: 20px;
+        box-shadow: 0px 0px 7px 0px #000000;
+    }
+
+    .read-more-wrapper {
+        align-items: center;
+    }
+
+    .read-more-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: justify;
+    }
+
+    .main-content-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image-details {
+        order: 0;
+    }
+
+    .image-user-info-wrapper {
+        display: flex;
+        flex-direction: column;
+        max-width: 700px;
+        max-height: none;
+        align-items: center;
+        order: 1;
+}
+
 }
